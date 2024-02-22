@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}CRUD!{% endblock %}
+
+{% block body %}
+    <table class="table">
+        <thead>
+            <tr>
+            <th scope="col">title</th>
+            <th scope="col">content</th>
+            <th scope="col">action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for article in data %}
+            <tr>
+                <td>{{article.title}}</td>
+                <td>{{article.content}}</td>
+                <td>
+                    <button class="action-btn">
+                        <a href="{{path('update', {'id' : article.id}) }}">update</a>
+                    </button>
+                    <button class="action-btn">
+                        <a href="{{path('delete', {'id' : article.id}) }}">delete</a>
+                    </button>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

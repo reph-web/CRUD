@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<div class="container-global">
+    <div class="container-form">
+        <h3>add article</h3>
+        {{ form_start(form) }}
+        <div class="form-group">
+        {{ form_label(form.title, 'title')}} :
+        {{ form_widget(form.title, { 'attr': {'class':'form-control'} }) }}
+        </div>
+
+        <div class="form-group">
+        {{ form_label(form.content, 'content') }} :
+        {{ form_widget(form.content, { 'attr': {'class':'form-control'} }) }}
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="">submit</button>
+        </div>
+
+        {{ form_end(form) }}
+    </div>
+</div>
+
+{% endblock %}
